@@ -44,6 +44,8 @@ const AllRoles = () => {
 
   return (
     <div className='container mt-5 text-center'>
+      {roles.length < 1 && <h1 className='text-light'>No roles Available</h1>}
+      {roles.length > 0  && 
       <table className="table table-dark">
         <thead>
           <tr>
@@ -66,7 +68,7 @@ const AllRoles = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>}
       <ToastContainer />
     </div>
   );

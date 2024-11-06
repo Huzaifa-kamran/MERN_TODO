@@ -57,7 +57,7 @@ const AddRole = () => {
  <div className="shapes"></div>
 </div>
 <form onSubmit={handleSubmit}>
- <h3>Update Role</h3>
+ <h3>Add Role</h3>
  <label htmlFor="user">Role Name</label>
  <input type="text" name="user" id="user" placeholder="Enter Rolename" onChange={(e)=> setRoleName(e.target.value)}/>
  <label htmlFor="psw">Role Status</label>
