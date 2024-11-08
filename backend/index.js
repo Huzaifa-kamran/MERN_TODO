@@ -6,13 +6,16 @@ const cors = require("cors")
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(cors());
+const {ImageHandle} = require("./Middlewares/UploadImage");
+
+const upload = ImageHandle();
 
 // connection with mongo 
 const {connectionDB} = require("./Config/connectionDB");
 
 // models 
 const {UserAccounts} = require("./Models/userAccounts");
-
+const {CreateUser} = require("./Controllers/UserRegister");
 
 // Controllers 
 const {userRoles,
@@ -22,7 +25,7 @@ const {userRoles,
 
 // Routes 
 app.route("/userroles").get(userRoles).post(createRole);
-app.route("/user").get().post();
+app.route("/user").post(upload.single("userImage"),CreateUser);
 
 
 app.route("/userroles/:id").delete(deleteRole).put(updateRole);
