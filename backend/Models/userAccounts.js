@@ -17,8 +17,13 @@ const userAcountsModel = mongoose.Schema(
         userImage:{
             type:String,
             required:false
+        },
+        userRole:{
+            type:String,
+            required:false
         }
     }
     );
 
-    module.exports = mongoose.model("UserAccounts", userAcountsModel);
+    const UserAccounts = mongoose.model("UserAccounts", userAcountsModel)
+    module.exports = {UserAccounts};

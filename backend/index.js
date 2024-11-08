@@ -22,6 +22,7 @@ const {userRoles,
 
 // Routes 
 app.route("/userroles").get(userRoles).post(createRole);
+app.route("/user").get().post();
 
 
 app.route("/userroles/:id").delete(deleteRole).put(updateRole);
